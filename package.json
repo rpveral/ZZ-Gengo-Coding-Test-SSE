@@ -1,0 +1,22 @@
+{
+  "name": "gengo",
+  "version": "1.0.0",
+  "description": "gengo palindromes",
+  "main": "palindrome.js",
+  "scripts": {
+    "test": "jest"
+   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpveral/ZZ-Gengo-Coding-Test-SSE.git"
+  },
+  "author": "Reinier Veral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpveral/ZZ-Gengo-Coding-Test-SSE/issues"
+  },
+  "homepage": "https://github.com/rpveral/ZZ-Gengo-Coding-Test-SSE#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
