@@ -57,6 +57,7 @@ const isPalindrome = (s) => {
 // getMinPartitions = getMinPartitions(string from i to k slice) + getMinPartitions(string from k slice + 1 to j) + 1 (initial slice)
 // Parameters: string s, i position (substring start), j position (substring end)
 // In the first call, the parameter can only include s, i and j are computed
+// Return: number of partitions required
 
 function getMinPartition(s, i=0, j=s.length-1)
 {
