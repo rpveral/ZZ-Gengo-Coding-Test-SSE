@@ -1,4 +1,7 @@
-// This function will 
+// This function will get the longest palindrome by traversing the string from start to end and getting
+// palindromes by starting at the 'center'
+// Parameter: string s
+// Return: longest found palindrome
 
 const longestPalindrome = (s) => {   
     if(s.length === 0)
@@ -16,7 +19,7 @@ const longestPalindrome = (s) => {
             end = i +  Math.floor(len/2)
         }
     }
-    return s.substring(start, end+1)
+    return s.substring(start, end + 1)
 }
 
 const expandFromCenter = (s, left, right) => {
@@ -37,21 +40,42 @@ const expandFromCenter = (s, left, right) => {
 // Return: true (s is a palindrome), false (s is not a palindrome)
 
 const isPalindrome = (s) => {
-    let isPalin = true
     if(s==='') {
-        isPalin = false
+        return false
     }
     for(i=0; i<Math.floor(s.length/2); i++) {
         if(s[i] !== s[s.length-i-1]) {
-            isPalin = false
-            break
+           return false
         }
     }
+    return true
+}
 
-    return isPalin
+// This function will recursively compute for the minimum partition needed to divide a string into palindromic substrings
+// getMinPartitions = 0 if the string is a palindrome, otherwise
+// k will loop from i to j-1 inclusive and compute for minimum partitions
+// getMinPartitions = getMinPartitions(string from i to k slice) + getMinPartitions(string from k slice + 1 to j) + 1 (initial slice)
+// Parameters: string s, i position (substring start), j position (substring end)
+// In the first call, the parameter can only include s, i and j are computed
+
+function getMinPartition(s, i=0, j=s.length-1)
+{
+    let ans = Number.MAX_VALUE
+    let count = 0
+
+    if (isPalindrome(s.substring(i, j + 1)) || s==='')
+        return 0
+     
+    for(let k = i; k < j; k++)
+    {
+        count = getMinPartition(s, i, k) + getMinPartition(s, k + 1, j) + 1;
+        ans = Math.min(ans, count);
+    }
+    return ans
 }
 
 module.exports = {
     isPalindrome,
-    longestPalindrome
+    longestPalindrome,
+    getMinPartition
 }

@@ -5,7 +5,7 @@
   "main": "palindrome.js",
   "scripts": {
     "test": "jest"
-   },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rpveral/ZZ-Gengo-Coding-Test-SSE.git"
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rpveral/ZZ-Gengo-Coding-Test-SSE#readme",
   "devDependencies": {
     "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

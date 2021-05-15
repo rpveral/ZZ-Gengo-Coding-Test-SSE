@@ -56,3 +56,29 @@ describe("Longest Palindrome Test", () => {
     });
 
 })
+
+describe("Minimum Partition Test", () => {
+    test('empty string', () => {
+        expect(palindromeFunctions.getMinPartition('')).toBe(0);
+    });
+
+    test('palindrome string', () => {
+        expect(palindromeFunctions.getMinPartition('aba')).toBe(0);
+    });
+
+    test('two palindrome substring', () => {
+        expect(palindromeFunctions.getMinPartition('ababab')).toBe(1);
+    });
+
+    test('three different character string', () => {
+        expect(palindromeFunctions.getMinPartition('abc')).toBe(2);
+    });
+
+    test('a string with two slices', () => {
+        expect(palindromeFunctions.getMinPartition('abaccccccdccc')).toBe(2);
+    });
+
+    test('a string with five slices', () => {
+        expect(palindromeFunctions.getMinPartition('abcdef')).toBe(5);
+    });
+})
